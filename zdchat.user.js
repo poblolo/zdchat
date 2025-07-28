@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ZendeskChat
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.0.1
 // @description  Copy ticket info to clipboard with Option+C or ¸
 // @author       You
 // @match        *://*/*
@@ -136,7 +136,7 @@ Find the ticket by: ${ticketNumber} ${userEmail}.
 
 - Keep all ticket info in memory for follow-up questions.
 - Consider any people in the conversation. Employees are identified by (Support Advisor) after their name and Merchants are the ones that are asking for help.
-- Read the conversation and extract the following information:
+- Read the conversation and extract the following information (make sure to respect the markdown formatting):
 
 > Main issue summary
 
