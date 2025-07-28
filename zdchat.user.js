@@ -138,7 +138,8 @@ Find the ticket by: ${ticketNumber} ${userEmail}.
 - Consider any people in the conversation. Employees are identified by (Support Advisor) after their name and Merchants are the ones that are asking for help.
 - Read the conversation and extract the following information (make sure to respect the markdown formatting):
 
-> Main issue summary
+**Main issue summary**
+> Brief description of the issue
 
 **Ticket Information:**
 - Zendesk ticket: ${ticketNumber}
