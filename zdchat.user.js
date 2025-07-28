@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ZendeskChat
 // @namespace    http://tampermonkey.net/
-// @version      1.0.1
+// @version      1.0.2
 // @description  Copy ticket info to clipboard with Option+C or ¸
 // @author       You
 // @match        *://*/*
