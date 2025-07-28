@@ -145,9 +145,9 @@ Find the ticket by: ${ticketNumber} ${userEmail}.
 - Customer email: ${userEmail}
 
 **Shop Information:**
-| Internal Links | Shop URL |
-|----------------|----------|
-| [Minerva/Collaborate links, shop-admin links, etc.] | [Shop URLs] |
+| Internal | Shop URL |
+|----------|----------|
+| [Shop's internal URL (shop-admin)] | [Shop URLs] |
 
 **How the issue was described by the merchant:**
 - [Merchant description]
