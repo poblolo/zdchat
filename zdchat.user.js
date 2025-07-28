@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ZendeskChat
 // @namespace    http://tampermonkey.net/
-// @version      1.0.2
+// @version      1.0.3
 // @description  Copy ticket info to clipboard with Option+C or ¸
 // @author       You
 // @match        *://*/*
@@ -73,8 +73,8 @@
         button.id = 'shopify-chat-toggle-btn';
         button.textContent = 'Hide Chat';
         button.style.position = 'fixed';
-        button.style.right = '20px';
-        button.style.bottom = '20px'; // Always anchored to bottom right
+        button.style.right = '15px';
+        button.style.bottom = '50px'; // Always anchored to bottom right
         button.style.zIndex = '100000';
         button.style.padding = '8px 16px';
         button.style.background = '#008060';
@@ -105,7 +105,7 @@
         const encodedPrompt = encodeURIComponent(textToPrefill);
         iframe.src = `https://chat.shopify.io/c/new?endpoint=openAI&model=o3&prompt=${encodedPrompt}`;
         iframe.style.position = 'fixed';
-        iframe.style.bottom = '20px';
+        iframe.style.bottom = '60px';
         iframe.style.right = '20px';
         iframe.style.width = '600px';
         iframe.style.height = '800px';
