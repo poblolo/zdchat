@@ -140,9 +140,14 @@ Find the ticket by: ${ticketNumber} ${userEmail}.
 
 > Main issue summary
 
-| Internal | Shop URL |
-|----------|----------|
-| [Internal links] | [Shop URLs] |
+**Ticket Information:**
+- Zendesk ticket: ${ticketNumber}
+- Customer email: ${userEmail}
+
+**Shop Information:**
+| Internal Links | Shop URL |
+|----------------|----------|
+| [Minerva/Collaborate links, shop-admin links, etc.] | [Shop URLs] |
 
 **How the issue was described by the merchant:**
 - [Merchant description]
