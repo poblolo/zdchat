@@ -1,10 +1,11 @@
 // ==UserScript==
 // @name         ZendeskChat
 // @namespace    http://tampermonkey.net/
-// @version      1.0.3
+// @version      1.0.4
 // @description  Copy ticket info to clipboard with Option+C or ¸
 // @author       You
-// @match        *://*/*
+// @match        https://*.zendesk.com/*
+// @match        https://shopify.zendesk.com/*
 // @grant        GM_setClipboard
 // ==/UserScript==
 
