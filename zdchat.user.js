@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ZendeskChat
 // @namespace    http://tampermonkey.net/
-// @version      1.0.4
+// @version      1.0.5
 // @description  Copy ticket info to clipboard with Option+C or ¸
 // @author       You
 // @match        https://*.zendesk.com/*
@@ -104,7 +104,7 @@
         const iframe = document.createElement('iframe');
         iframe.id = 'shopify-chat-iframe';
         const encodedPrompt = encodeURIComponent(textToPrefill);
-        iframe.src = `https://chat.shopify.io/c/new?endpoint=openAI&model=o3&prompt=${encodedPrompt}`;
+        iframe.src = `https://chat.shopify.io/c/new?agent_id=agent_Afi4mD6G_Gz9UfPynnU7D&prompt=${encodedPrompt}`;
         iframe.style.position = 'fixed';
         iframe.style.bottom = '60px';
         iframe.style.right = '20px';
