@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ZendeskChat
 // @namespace    http://tampermonkey.net/
-// @version      1.0.5
+// @version      1.0.6
 // @description  Copy ticket info to clipboard with Option+C or ¸
 // @author       You
 // @match        https://*.zendesk.com/*
@@ -104,7 +104,7 @@
         const iframe = document.createElement('iframe');
         iframe.id = 'shopify-chat-iframe';
         const encodedPrompt = encodeURIComponent(textToPrefill);
-        iframe.src = `https://chat.shopify.io/c/new?agent_id=agent_Afi4mD6G_Gz9UfPynnU7D&prompt=${encodedPrompt}`;
+        iframe.src = `https://chat.shopify.io/c/new?endpoint=openAI&model=o3&prompt=${encodedPrompt}&agent=`;
         iframe.style.position = 'fixed';
         iframe.style.bottom = '60px';
         iframe.style.right = '20px';
@@ -126,6 +126,28 @@
                 // Cross-origin, can't access
             }
         };
+    }
+
+    function openLocalEditor() {
+        function attemptOpen(url) {
+            try {
+                const link = document.createElement('a');
+                link.href = url;
+                link.style.display = 'none';
+                document.body.appendChild(link);
+                link.click();
+                setTimeout(() => {
+                    if (link && link.parentNode) {
+                        link.parentNode.removeChild(link);
+                    }
+                }, 0);
+            } catch (e) {
+                // Ignore
+            }
+        }
+        // Try Cursor first, then VS Code as a fallback
+        attemptOpen('cursor://');
+        setTimeout(() => attemptOpen('vscode://'), 300);
     }
 
     function copyTicketInfo() {
@@ -183,6 +205,7 @@ Then accessing the MCPs figure out what is the issue and provide a solution.
             e.preventDefault();
                     removeAllChatIframesAndButtons();
         const prompt = copyTicketInfo();
+        openLocalEditor();
         embedChatShopifyWithPrefill(prompt);
         }
     });
