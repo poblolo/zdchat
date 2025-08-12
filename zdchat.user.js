@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ZendeskChat
 // @namespace    http://tampermonkey.net/
-// @version      1.0.6
+// @version      1.0.7
 // @description  Copy ticket info to clipboard with Option+C or ¸
 // @author       You
 // @match        https://*.zendesk.com/*
@@ -104,7 +104,7 @@
         const iframe = document.createElement('iframe');
         iframe.id = 'shopify-chat-iframe';
         const encodedPrompt = encodeURIComponent(textToPrefill);
-        iframe.src = `https://chat.shopify.io/c/new?endpoint=openAI&model=o3&prompt=${encodedPrompt}&agent=`;
+        iframe.src = `https://chat.shopify.io/c/new?prompt=${encodedPrompt}&agent_id=agent_Afi4mD6G_Gz9UfPynnU7D`;
         iframe.style.position = 'fixed';
         iframe.style.bottom = '60px';
         iframe.style.right = '20px';
@@ -129,6 +129,7 @@
     }
 
     function openLocalEditor() {
+        /*
         function attemptOpen(url) {
             try {
                 const link = document.createElement('a');
@@ -148,6 +149,7 @@
         // Try Cursor first, then VS Code as a fallback
         attemptOpen('cursor://');
         setTimeout(() => attemptOpen('vscode://'), 300);
+        */
     }
 
     function copyTicketInfo() {
@@ -205,7 +207,7 @@ Then accessing the MCPs figure out what is the issue and provide a solution.
             e.preventDefault();
                     removeAllChatIframesAndButtons();
         const prompt = copyTicketInfo();
-        openLocalEditor();
+        // openLocalEditor(); // disabled; prefer iframe
         embedChatShopifyWithPrefill(prompt);
         }
     });
